@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import RegistroEntradaSalidaComponent from './Componentes/RegistroEntradaSalida/App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+
+    <RegistroEntradaSalidaComponent />
+  
   </React.StrictMode>,
   document.getElementById('root')
 );
