@@ -79,8 +79,6 @@ app.put('/actualizarUsuario', (request, response) => {
     if (estaEnOficina != undefined) {
         datosUpdate["EstaEnOficina"] = estaEnOficina;
         if (estaEnOficina) {
-            let today = ;
-            
             datosUpdate["FechaUltimaEntrada"] = new Date();
         } else{
             datosUpdate["FechaUltimaSalida"] = new Date();
