@@ -2,18 +2,19 @@ import { useState } from 'react'
 import './RegistrarEntradaSalidaComponent.css';
 
 function RegistroEntradaSalidaComponent() {
-  const [dni, setdni] = useState("1897171da")
+  const [dni, setdni] = useState("")
 
   function cambiarDni(event) {
     setdni(event.target.value)
   }
 
   return (
-    <div class="container" className="App">
-      <label>DNI</label>
-      <input type="text" value={dni} onChange={cambiarDni} />
-      <button  onClick={() => registrarEntrada(dni)} >Entrada</button>
-      <button onClick={() => registrarSalida(dni)} >Salida</button>
+    <div class="container container2" className="App">
+      <p class="Intro"> Inserte su DNI para continuar:</p>
+      <label >DNI</label>
+      <input class="col-md-1" type="text" value={dni} onChange={cambiarDni} />
+      <button class="btn btn-success" onClick={() => registrarEntrada(dni)} >Entrada</button>
+      <button class="btn btn-danger"onClick={() => registrarSalida(dni)} >Salida</button>
     </div>
   );
 }

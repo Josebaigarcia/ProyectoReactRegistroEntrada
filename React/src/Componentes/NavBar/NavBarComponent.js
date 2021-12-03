@@ -18,9 +18,6 @@ function NavBarComponent() {
               <a class="nav-link" href="/crearUsuarios">Añadir</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Editar</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="/listaUsuarios">Lista Trabajadores</a>
             </li>
           </ul>

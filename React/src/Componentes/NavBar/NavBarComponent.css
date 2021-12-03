@@ -1,3 +1,7 @@
-.container-fluid{
-  
+.navbar{
+  border-radius: 20px;
+}
+.nacbar-brand{
+    font: noodletitling ;
+    font-size: 40px ;
 }

@@ -8,6 +8,7 @@ import {
 import RegistroEntradaSalidaComponent from './RegistroEntradaSalida/RegistrarEntradaSalidaComponent';
 import ListaUsuariosComponent from './ListaUsuarios/ListaUsuariosComponent';
 import AñadirUsuarios from './AñadirUsuarios/AñadirUsuarios';
+import EditarUsuariosModal from "./EditarUsuarios/EditarUsuariosModal";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                     <Route path="/" element={<RegistroEntradaSalidaComponent />} />
                     <Route path="/listaUsuarios" element={<ListaUsuariosComponent />} />
                     <Route path="/crearUsuarios" element={<AñadirUsuarios />} />
+                    <Route path="/editarUsuarios/:idUsuario" element={<EditarUsuariosModal showModal={true} />} />
                 </Routes>
             </Router>
         </div>

@@ -9,10 +9,14 @@ app.use(cors())
 
 app.get('/listaUsuarios', (request, response) => {
     let dniUsuario = request.query.DNI;
+    let idUsuario = request.query.id;
 
     let datoBusqueda = {}
     if (dniUsuario != undefined) {
         datoBusqueda["DNI"] = dniUsuario;
+    }
+    if (idUsuario != undefined) {
+        datoBusqueda["_id"] = mongodb.ObjectId(idUsuario);
     }
 
     let db = app.locals.db;
@@ -70,11 +74,11 @@ app.put('/actualizarUsuario', (request, response) => {
     }
 
     if (apellidoUsuarioPut != undefined) {
-        datosUpdate["Apellido"] = nombreUsuarioPut;
+        datosUpdate["Apellido"] = apellidoUsuarioPut;
     }
 
     if (DNIPut != undefined) {
-        datosUpdate["DNI"] = nombreUsuarioPut;
+        datosUpdate["DNI"] = DNIPut;
     }
     if (estaEnOficina != undefined) {
         datosUpdate["EstaEnOficina"] = estaEnOficina;
@@ -101,7 +105,7 @@ app.delete('/borrarUsuario', (request, response) => {
     let idUsuario = request.body.Id;
 
     let db = request.app.locals.db;
-    db.collection('Persona').deleteOne({ _id: idUsuario }, function (err, datos) {
+    db.collection('Persona').deleteOne({ _id: mongodb.ObjectId(idUsuario) }, function (err, datos) {
         if (err != undefined) {
             console.log(err);
             response.send({ mensaje: "Error: " + err });

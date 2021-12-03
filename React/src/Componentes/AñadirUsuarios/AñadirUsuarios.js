@@ -21,6 +21,7 @@ function AñadirUsuarios() {
     }
     return (
         <div class="container" className="AñadirUsuario">
+            <p class="trabajador">Añada los datos del nuevo trabajador:</p>
             <label>DNI</label>
             <input type="text" value={dni} onChange={cambiarDni} />
             
@@ -32,7 +33,7 @@ function AñadirUsuarios() {
             <label>Apellidos</label>
             <input type="text" value={apellidos} onChange={cambiarApellidos} />
 
-            <button onClick={() =>añadirUsuarioFetch (nombre, apellidos, dni)} >Añadir</button>
+            <button class="btn btn-success" onClick={() =>añadirUsuarioFetch (nombre, apellidos, dni)} >Añadir</button>
         </div>
     )
 }
@@ -47,7 +48,7 @@ async function añadirUsuarioFetch(nombreUsuario, apellidoUsuario, dniUsuario) {
     })
     let respuesta = await response.json();
     console.log(respuesta)
-    return respuesta;
+    alert("Se ha añadido correctamente");
   }
 
 export default AñadirUsuarios;
