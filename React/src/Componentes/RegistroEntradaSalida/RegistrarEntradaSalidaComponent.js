@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css';
+import './RegistrarEntradaSalidaComponent.css';
 
 function RegistroEntradaSalidaComponent() {
   const [dni, setdni] = useState("1897171da")
@@ -9,23 +9,22 @@ function RegistroEntradaSalidaComponent() {
   }
 
   return (
-    <div className="App">
+    <div class="container" className="App">
       <label>DNI</label>
       <input type="text" value={dni} onChange={cambiarDni} />
-      <button onClick={() => registrarEntrada(dni)} >Entrada</button>
+      <button  onClick={() => registrarEntrada(dni)} >Entrada</button>
       <button onClick={() => registrarSalida(dni)} >Salida</button>
     </div>
   );
 }
 
-export default RegistroEntradaSalidaComponent;
 
 async function registrarEntrada(dni) {
   let id = await obtenerIdUsuario(dni)
   if (id !== undefined) {
     await updateEntrada(id, true);
   }
-
+  
 }
 
 async function registrarSalida(dni) {
@@ -54,3 +53,4 @@ async function updateEntrada(idUsuario, esEntrada) {
   console.log(respuesta)
   return respuesta;
 }
+  export default RegistroEntradaSalidaComponent;
